@@ -7,11 +7,17 @@
 ###Members:
 
 |Name|GitHub Link|E-Mail Address| 
+|----|-----|-------| 
 |Harlan Brasek| [HABRASEK](https://www.github.com/habrasek) | hbrasek@gmail.com |
+|----|-----|-------| 
 |Samson Yeong| [syeong0204](https://www.github.com/syeong0204) | syeong0204@gmail.com |
+|----|-----|-------| 
 |Tamara Delice| [Tamara0909](https://www.github.com/Tamara0909) | tamaradelice@yahoo.com |
+|----|-----|-------| 
 |Juliana Puskar| [Anikraze](https://www.github.com/Anikraze) | jepuskar1996@gmail.com |
+|----|-----|-------| 
 |Ali Daneshmand| [Almandiro](https://www.github.com/Almandiro) | ali.daneshmand@gmail.com |
+|----|-----|-------| 
 
 ##Proposal Date: 9/8/2021
 
@@ -19,21 +25,25 @@
 The purpose of this project is to create a model to determine the reliability of credit card users based on data from their application records.  The goal is to assist credit card lenders determine the dependability of potential customers.  One possibility is allowing a user to enter their application info to see if the user will be granted or denied a credit card.
 
 #Data Sources:
+1. [KAGGLE Credit Records](https://www.kaggle.com/rikdifos/credit-card-approval-prediction)
+2. [Cleanded Credit Card Data - CSV](https://drive.google.com/file/d/13H5KgMEcYH63EmYZOJGs801HxggIhc09/view?usp=sharing)
+3. [Application Record Data - CSV](https://drive.google.com/file/d/13JQhWnajLZ4yBYbFeHabTTHBZpi_1tv1/view?usp=sharing)
+4. [SQL File]()
 
-[KAGGLE Credit Records](https://www.kaggle.com/rikdifos/credit-card-approval-prediction)
+
 
 Inputs: _Personal Information_
 Outputs: _Approval or Denial_
 
 #Methods:
-|Method ID| Method Name|
-|1| Supervised Machine Learning|
-|2| Puthon Pandas|
-|3| Python|
-|4| Plot.LY |
-|5| Tableau |
-|6| SQL Database (either MySQL or PostGRES) |
-|7| CSV Files|
+
+1. Supervised Machine Learning
+2. Puthon Pandas
+3. Python
+4. Plot.LY
+5. Tableau
+6. SQL Database (either MySQL or PostGRES)
+7. CSV Files
 
 #Overall Tasks:
 
