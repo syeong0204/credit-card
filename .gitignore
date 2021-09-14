@@ -8,6 +8,7 @@ __pycache__/
 
 application_record.csv
 credit_record.csv
+app_record_ml.csv
 
 # Distribution / packaging
 .Python
