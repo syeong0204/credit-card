@@ -130,6 +130,6 @@ function linkmaker(){
         children = document.getElementById('children').value;
         dob = document.getElementById('dob').value;
         dow = document.getElementById('dow').value;
-        document.write(`<a href="http://127.0.0.1:5000/test/${children}/${income}/${dob}/${dow}/${mobile}${work}${homephone}${email}/${fams}/${gender}${car}${homes}${inctype}${edu}${marr}${ht}/${occ} ">Youtube</a>`);
+        document.write(`<a href="http://127.0.0.1:5000/test/${children}/${income}/${dob}/${dow}/${mobile}${work}${homephone}${email}/${fams}/${gender}${car}${homes}${inctype}${edu}${marr}${ht}/${occ} ">Click Here to Continue!</a>`);
 }
 
