@@ -1,0 +1,54 @@
+<html>
+<head>  
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+	<script>
+		window.onload = function () {
+var chart0 = new CanvasJS.Chart("chartContainer", {
+    animationEnabled: true,
+    
+    title:{
+        text:"Credit Card Payments"
+
+    },
+    axisX:{
+        interval: 1,
+        title: 'status'
+    },
+    axisY2:{
+        interlacedColor: "rgba(1,77,101,.2)",
+        gridColor: "rgba(1,77,101,.1)",
+        title: "Due Date",
+        interval: 20000,
+
+    },
+
+    data: [{
+        type: "bar",
+        name: "payments",
+        axisYType: "secondary",
+        color: "#014D65",
+        dataPoints: [
+            { y: 383120, label: "1-29days due" },
+            { y: 11091, label: "30-59" },
+            { y: 870, label: "60-89" },
+            { y: 323, label: "90-119" },
+            { y: 227, label: "129-149" },
+            { y: 442031, label: "paid off" },
+            { y: 209230, label: "no loan for the month" },
+        ]
+    }]
+    
+});
+
+
+chart.render();
+
+}
+</script>
+
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://raw.githubusercontent.com/habrasek/credit-card/main/cleaned_credit_card.csv"></script>
+</body>
+</html>
