@@ -1,40 +1,53 @@
 <html>
 <head>  
-<script>
-window.onload = function () {
-	
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	
-	title:{
-		text:"Credit Card Applicants"
-	},
-	axisX:{
-		interval: 1
-	},
-	axisY2:{
-		interlacedColor: "rgba(1,77,101,.2)",
-		gridColor: "rgba(1,77,101,.1)",
-		title: "Number of Applicants"
-	},
-	data: [{
-		type: "bar",
-		name: "applicants",
-		axisYType: "secondary",
-		color: "#014D65",
-		dataPoints: [
-			{ y: 3, label: "Approved" },
-			{ y: 7, label: "Non-approved" },
-			
-		]
-	}]
-});
-chart.render();
-
-}
-</script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
+	<script>
+		window.onload = function () {
+			
+		var chart = new CanvasJS.Chart("chartContainer", {
+			animationEnabled: true,
+			
+			title:{
+				text:"Credit Card Applicants"
+			},
+			axisX:{
+				interval: 1,
+				title: 'Application status'
+			},
+			axisY2:{
+				interlacedColor: "rgba(1,77,101,.2)",
+				gridColor: "rgba(1,77,101,.1)",
+				title: "Number of Applicants",
+				interval: 1000,
+				scaleBreaks: {
+					customBreaks: [{
+						startValue:4000,
+						endValue: 40000,
+						color: 'purple'
+					}]
+				}
+			},
+
+			data: [{
+				type: "bar",
+				name: "applicants",
+				axisYType: "secondary",
+				color: "#014D65",
+				dataPoints: [
+					{ y: 45546, label: "Approved" },
+					{ y: 440, label: "Non-approved" },
+				]
+			}]
+			
+		});
+
+		chart.render();
+		
+		}
+		</script>
+
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 <script src="https://raw.githubusercontent.com/habrasek/credit-card/main/cleaned_credit_card.csv"></script>
 </body>
