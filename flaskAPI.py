@@ -13,21 +13,22 @@ from datetime import date
 
 app = Flask(__name__)
 
-URI = f"postgresql://{username}:{password}@localhost:{port}/{db_name}"
-Engine = create_engine(URI)
-Base = automap_base()
-Base.prepare(Engine, reflect=True)
+#URI = f"postgresql://{username}:{password}@localhost:{port}/{db_name}"
+#Engine = create_engine(URI)
+#Base = automap_base()
+#Base.prepare(Engine, reflect=True)
 # Map table
 
 @app.route('/', methods=['GET'])
 def home():
     return render_template("index.html")
-@app.route("/everything")
+@app.route("/visuals")
 def everything():
-	df = pd.read_sql("""SELECT * FROM app_record_ml;""", Engine)
-	results = df.to_dict(orient = "records")
+#	df = pd.read_sql("""SELECT * FROM app_record_ml;""", Engine)
+#	results = df.to_dict(orient = "records")
 
-	return jsonify(results)
+#	return jsonify(results)
+    return render_template('vis.html')
 
 @app.route("/form")
 def form():
@@ -35,9 +36,9 @@ def form():
 
 
 cc = pd.read_csv('cleaned_credit_card.csv')
-app = pd.read_csv('app_record_ml.csv')
+apps = pd.read_csv('app_record_ml.csv')
 
-df = pd.merge(cc, app, on='ID')
+df = pd.merge(cc, apps, on='ID')
 del df['Unnamed: 0']
 del df['ID']
 
@@ -51,8 +52,7 @@ threes = y['3']
 fours = y['4']
 fives = y['5']
 zeroes = y['0']
-y['score'] = y['1']
-y = y['score']
+y = y['1']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y)
 X2_train, X2_test, y2_train, y2_test = train_test_split(X, twos)
@@ -281,7 +281,34 @@ def modelrun(noc, inc, dofb, dofw, tech, famsize, info, jobtype):
     four = tree4.predict([final])[0]
     five = tree5.predict([final])[0]
 
-    return(f"{zero} zeroes, {one} ones, {two} twos, {three} threes, {four} fours, {five} fives")
+    sums = int(one+two+three+four+five+zero)
+
+    if sums > 9:
+        return(f"""You are high risk
+                \n{zero} times a month late
+                \n{one} times two months late
+                \n{two} times three months late
+                \n{three} times four months late
+                \n{four} times five months late
+                \n{five} times six months late""")
+
+    if sums > 4.9:
+        return(f"""You are higher risk
+                \n{zero} times a month late
+                \n{one} times two months late
+                \n{two} times three months late
+                \n{three} times four months late
+                \n{four} times five months late
+                \n{five} times six months late""")
+
+    if sums < 4.9:
+        return(f"""You are low risk
+                \n{zero} times a month late
+                \n{one} times two months late
+                \n{two} times three months late
+                \n{three} times four months late
+                \n{four} times five months late
+                \n{five} times six months late""")
 
 
 
