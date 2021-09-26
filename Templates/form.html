@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Financial Irresponsibility</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="button.js"></script>
@@ -13,7 +14,27 @@
 </head>
 
 <body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand" href="#">Credit</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Plots<span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="finalized.html">approved</a></li>
+                        <li><a href="status.html">status</a></li>
+                    </ul>
+        </div>
+    </nav>
+    <br>
+    <div class ='form-text'>
+        <p>Fill out this form to see how late you will be to make a payment</p>
+    </div>
     <form>
+        <div class ='credit-form'>
         Last name:    <input type="text" name="lname" id="lname"><br/>
         First name:   <input type="text" name="fname" id="fname"><br/>
         Name: <span id="result"></span>
@@ -137,7 +158,7 @@
         <br>
 
     <br><input type="button" value="Submit" onClick="linkmaker()">
-
+        </div>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -146,7 +167,6 @@
 
 
     <script src= "{{ url_for('static', filename='selector.js') }}"></script>
-
 
 </body>
 

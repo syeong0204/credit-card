@@ -1,0 +1,28 @@
+.header {
+  font-size: 20px;
+  text-align: center;
+}
+
+.nav{
+  font-size: 20px;
+}
+.navbar {
+  font-weight: bold;
+  font-size: 14px;
+  background-color: black;
+}
+
+.body-text{
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.credit-form{
+  margin-left:10px;
+}
+
+.form-text{
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+}
